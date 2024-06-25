@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using MyTestMVC.Datas.Entities;
+@model Events;
+@{
+}
+<form asp-action="UpdateEvent" asp-controller="Home" method="post">
+    <div class="form-group">
+        <label for="name">Id</label>
+        <input type="text" class="form-control" id="Id" asp-for="@Model.Id" placeholder="Enter Event">
+
+    </div>
+    <div class="form-group">
+        <label for="name">Event</label>
+        <input type="text" class="form-control" id="Title" asp-for="@Model.Title" placeholder="Enter Event">
+
+    </div>
+    <div class="form-group">
+        <label for="surname">date</label>
+        <input type="date" class="form-control" id="LastDate" asp-for="@Model.LastDate" placeholder="Enter Time">
+    </div><br>
+
+    <button type="submit" style="background-color:#FF8333;color:white;" class="btn btn-light"> Update</button>
+</form>
+

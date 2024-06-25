@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using MyTestMVC.Datas.Entities;
+@model List<Events>;
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">LastTime</th>
+            <th scope="col">RestTime</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach(var item in Model)
+        {
+            
+            
+            <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.Title</td>
+            <td>@item.LastDate</td>
+            <td>@item.LastDate-@item.CurrentDate</td>
+            <td>@Html.ActionLink("Edit","EditEvent","Home",new {Id = item.Id})</td>
+                <td>@Html.ActionLink("Delete","DeleteEvent","Home",new {Id = item.Id})</td>
+        </tr>
+        }
+        
+        
+    </tbody>
+   
+</table>
+@Html.ActionLink("Add","AddEvent","Home")
